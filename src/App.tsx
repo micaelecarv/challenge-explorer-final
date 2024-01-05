@@ -4,8 +4,8 @@ import { datadogRum } from '@datadog/browser-rum';
 export function App() {
 
 datadogRum.init({
-    applicationId: '2689cbf3-e6f1-4fb0-b44d-2820625ed874',
-    clientToken: 'pub60cb0a778bce627ea968188d42a939c0',
+    applicationId: process.env.DATADOG_APPLICATION_ID,
+    clientToken: process.env.DATADOG_CLIENT_TOKEN,
     site: 'datadoghq.com',
     service: 'challenge-explorer-final',
     env: 'production',
