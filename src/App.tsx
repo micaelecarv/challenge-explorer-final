@@ -1,11 +1,11 @@
 import React from "react"
 import { datadogRum } from '@datadog/browser-rum';
 
-export function App() {
+function App() {
 
-datadogRum.init({
-    applicationId: process.env.DATADOG_APPLICATION_ID,
-    clientToken: process.env.DATADOG_CLIENT_TOKEN,
+  datadogRum.init({
+    applicationId: '2689cbf3-e6f1-4fb0-b44d-2820625ed874',
+    clientToken: 'pub60cb0a778bce627ea968188d42a939c0',
     site: 'datadoghq.com',
     service: 'challenge-explorer-final',
     env: 'production',
@@ -15,7 +15,7 @@ datadogRum.init({
     trackUserInteractions: true,
     trackResources: true,
     trackLongTasks: true,
-    defaultPrivacyLevel: 'allow',
+    defaultPrivacyLevel: 'mask-user-input',
 });
 
   return (
@@ -24,3 +24,5 @@ datadogRum.init({
     </>
   )
 }
+
+export default App;
