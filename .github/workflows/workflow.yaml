@@ -1,0 +1,39 @@
+name: Food Explorer CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      branches:
+        - main
+    workflow_dispatch:
+
+jobs:
+  continuos-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' 
+      - name: run install, build and test
+        run: |
+          npm install
+          npm run build
+          npm test
+          
+      - name: Configurar git para implantação
+        run: |
+          git config --global user.name "Micaele Carvalho"
+          git config --global user.email "micaelecarv@gmail.com"
+
+    # - name: Adicionar remoto para o serviço de hospedagem
+    #   run: git remote add deploy https://PAT@servico-de-hospedagem.com/user/repo.git
+
+    # - name: Empurrar para o serviço de hospedagem
+    #   run: git push deploy main
