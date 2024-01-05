@@ -18,9 +18,13 @@ function App() {
     defaultPrivacyLevel: 'mask-user-input',
 });
 
+  function handleClick() {
+    console.log('Button clicked');
+  }
   return (
     <>
      <h1>Mica</h1>
+     <button onClick={handleClick}>Clique aqui</button>
     </>
   )
 }
