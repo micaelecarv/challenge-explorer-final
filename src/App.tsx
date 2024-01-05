@@ -18,6 +18,8 @@ function App() {
     defaultPrivacyLevel: 'mask-user-input',
 });
 
+  datadogRum.startSessionReplayRecording();
+
   function handleClick() {
     console.log('Button clicked');
   }
