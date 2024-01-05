@@ -49,8 +49,8 @@ jobs:
           publish_dir: ./dist
 
       - name: Run Datadog Synthetic tests
-        uses: DataDog/synthetics-ci-github-action@2b56dc0cca9daa14ab69c0d1d6844296de8f941e
+        uses: DataDog/synthetics-ci-github-action@v0.23.0
         with:
-            api_key: ${{secrets.DD_API_KEY}}
-            app_key: ${{ secrets.DD_APP_KEY }}
-            datadog_site: datadoghq.com
+          api_key: ${{secrets.DD_API_KEY}}
+          app_key: ${{ secrets.DD_APP_KEY }}           
+          config_path: './synthetics-config.json'
