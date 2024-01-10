@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { datadogRum } from "@datadog/browser-rum";
-import { datadogConfig } from "./datadog.config";
+import { initMonitoring } from "./lib/datadog/datadog.config";
 
 export function App() {
   useEffect(() => {
-    datadogRum.init(datadogConfig);
-    datadogRum.startSessionReplayRecording();
+    initMonitoring();
   }
   , []);
 
