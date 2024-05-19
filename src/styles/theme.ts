@@ -41,6 +41,7 @@ const theme = {
     fonts: {
         inter: "Inter",
         roboto: "Roboto",
+        poppins: "Poppins",
     },
     styles: {
         global: {
